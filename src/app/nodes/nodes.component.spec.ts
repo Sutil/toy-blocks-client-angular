@@ -1,3 +1,4 @@
+import { BlocksComponent } from './../blocks/blocks.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClient } from '@angular/common/http';
 import {
@@ -19,7 +20,7 @@ describe('NodesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [NodesComponent, NodeComponent, StatusComponent],
+      declarations: [NodesComponent, NodeComponent, StatusComponent, BlocksComponent],
     }).compileComponents();
 
     httpClient = TestBed.get(HttpClient);
@@ -35,4 +36,5 @@ describe('NodesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

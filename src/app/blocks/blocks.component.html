@@ -1,0 +1,27 @@
+
+<div class="blocks" >
+
+  <ng-container *ngIf="blocks.loading; else error" >
+    Loading...
+  </ng-container>
+
+  <ng-template #error >
+    <ng-container *ngIf="blocks.error; else emptyBlocks" >
+      Imporssible to retrive blocks.
+    </ng-container>
+  </ng-template>
+
+  <ng-template #emptyBlocks >
+    <ng-container *ngIf="blocks.empty; else blockList" ></ng-container>
+    No data to show. Blocks are empty.
+  </ng-template>
+
+  <ng-template #blockList >
+    <div class="block" *ngFor="let block of blocks.data" >
+      <span>{{ block.attributes.index | indexFormatter }}</span>
+      <p>
+        {{ block.attributes.data }}
+      </p>
+    </div>
+  </ng-template>
+</div>
